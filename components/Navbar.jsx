@@ -65,12 +65,7 @@ const Navbar = (/* props */) => {
           w={"100%"}
         >
           <HStack align="left" mr={5}>
-            <Heading
-              as="h2"
-              size="lg"
-              color={"yellow.400"}
-              fontFamily={"Montserrat"}
-            >
+            <Heading as="h2" size="lg" color={"yellow.400"}>
               v-max
             </Heading>
           </HStack>

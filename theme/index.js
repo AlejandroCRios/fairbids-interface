@@ -25,4 +25,11 @@ const config = {
   useSystemColorMode: true,
 };
 
-export const theme = extendTheme({ colors, config });
+export const theme = extendTheme({
+  colors,
+  config,
+  fonts: {
+    heading: `'Open Sans', sans-serif`,
+    body: `'Raleway', sans-serif`,
+  },
+});
