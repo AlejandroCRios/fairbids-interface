@@ -14,7 +14,7 @@ import "@fontsource/montserrat";
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli],
   [
-    alchemyProvider({ apiKey: "1VRMN3cj79ZsV6_zSBD9tUeGrNjUdptc" }),
+    // alchemyProvider({ apiKey: "1VRMN3cj79ZsV6_zSBD9tUeGrNjUdptc" }),
     publicProvider(),
   ]
 );
