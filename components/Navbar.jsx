@@ -16,6 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ToggleButton";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
 
 /* const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
@@ -37,7 +39,7 @@ import ThemeToggleButton from "./ToggleButton";
  */
 const Navbar = (/* props */) => {
   /*   const { path } = props; */
-
+  const { isDisconnected } = useAccount();
   return (
     <Box
       position="fixed"
@@ -72,6 +74,7 @@ const Navbar = (/* props */) => {
           {/*  <LinkItem href="/works" path={path}>
             Works
           </LinkItem> */}
+          {!isDisconnected && <ConnectButton />}
         </Stack>
 
         <Box flex={1} align="right">
