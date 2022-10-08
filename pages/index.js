@@ -6,6 +6,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Box, Button, Container, Input, VStack } from "@chakra-ui/react";
 import { useAccount, useContract, useSigner , useProvider} from "wagmi";
 import useBrink from "../utils/useBrink"
+import useSwarm from "../utils/useSwarm"
 
 import { useForm } from "../helpers/useForm";
 
@@ -15,6 +16,7 @@ export default function Home() {
   const { data } = useSigner();
 
   const brink = useBrink();
+  const swarm = useSwarm();
 
   useProvider()
 
