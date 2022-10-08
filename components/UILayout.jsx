@@ -1,7 +1,8 @@
 import Head from "next/head";
 
-import { Box, Container, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, HStack, useColorModeValue } from "@chakra-ui/react";
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
 Navbar;
 
@@ -31,7 +32,7 @@ const Layout = ({ children }) => {
 
       <Navbar></Navbar>
 
-      <Container maxW="container.md" pt={14}>
+      <Container w={"100%"} pt={20}>
         {children}
       </Container>
     </Box>

@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.3.5",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@fontsource/montserrat": "^4.5.13",
     "@rainbow-me/rainbowkit": "^0.7.1",
     "ethers": "^5.7.1",
     "framer-motion": "6",

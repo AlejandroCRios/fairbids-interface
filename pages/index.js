@@ -12,7 +12,7 @@ export default function Home() {
   const { formState, onInputChange } = useForm();
   const { address, isConnecting, isDisconnected } = useAccount();
   const { data } = useSigner();
-  console.log(data);
+
   return (
     <Box as="main" pb={8}>
       <Container maxW={"xl"} w={"100%"} pt={20}>

@@ -1,10 +1,15 @@
 import "@rainbow-me/rainbowkit/styles.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { Children } from "react";
+import "@fontsource/montserrat";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli],
@@ -28,7 +33,11 @@ const wagmiClient = createClient({
 export const Main = ({ children }) => {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider modalSize="compact" chains={chains}>
+      <RainbowKitProvider
+        modalSize="compact"
+        theme={darkTheme()}
+        chains={chains} /* theme={darkTheme} */
+      >
         <ChakraProvider> {children}</ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>

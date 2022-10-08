@@ -2,6 +2,7 @@
 import NextLink from "next/link";
 import {
   Container,
+  Image,
   Box,
   Link,
   Stack,
@@ -13,6 +14,9 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
+  HStack,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ToggleButton";
@@ -41,66 +45,43 @@ const Navbar = (/* props */) => {
   /*   const { path } = props; */
   const { isDisconnected } = useAccount();
   return (
-    <Box
+    <Grid
       position="fixed"
-      as="nav"
       w="100%"
       css={{ backdropFilter: "blur(10px)" }}
       zIndex={2}
       /*    {...props} */
+      /*  borderBottom={"solid 1px white"} */
+      justifyItems={"center"}
     >
-      <Container
-        display="flex"
-        p={2}
-        maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
-      >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-            {/*    <Logo /> */}
-          </Heading>
-        </Flex>
-
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          display={{ base: "none", md: "flex" }}
-          width={{ base: "full", md: "auto" }}
-          alignItems="center"
-          flexGrow={1}
-          mt={{ base: 4, md: 0 }}
+      <GridItem maxW="8xl" w={"100%"}>
+        <HStack
+          display="flex"
+          p={4}
+          px={10}
+          wrap="wrap"
+          align="center"
+          justify="space-between"
+          w={"100%"}
         >
-          {/*  <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem> */}
-          {!isDisconnected && <ConnectButton />}
-        </Stack>
+          <HStack align="left" mr={5}>
+            <Heading
+              as="h2"
+              size="lg"
+              color={"yellow.400"}
+              fontFamily={"Montserrat"}
+            >
+              v-max
+            </Heading>
+          </HStack>
 
-        <Box flex={1} align="right">
-          <ThemeToggleButton />
-
-          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-              </MenuList>
-            </Menu>
+          <Box align="right">
+            {/*  <ThemeToggleButton /> */}
+            {!isDisconnected && <ConnectButton />}
           </Box>
-        </Box>
-      </Container>
-    </Box>
+        </HStack>
+      </GridItem>
+    </Grid>
   );
 };
 
