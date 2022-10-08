@@ -14,8 +14,11 @@ import { theme } from "../theme";
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli],
   [
-    // alchemyProvider({ apiKey: "1VRMN3cj79ZsV6_zSBD9tUeGrNjUdptc" }),
-    publicProvider(),
+    jsonRpcProvider({
+      rpc: (chain) => ({
+        http: `http://127.0.0.1:8545/`,
+      }),
+    }),
   ]
 );
 

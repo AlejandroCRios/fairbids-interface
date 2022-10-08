@@ -16,6 +16,7 @@ import { useForm } from "../helpers/useForm";
 const Item = ({ data }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const { formState, onInputChange } = useForm();
+
   return (
     <VStack rounded={"md"} p={5} spacing={5} bgColor={"#0A071E"} boxShadow="xl">
       <Image src={data.image} alt={"item image"}></Image>
