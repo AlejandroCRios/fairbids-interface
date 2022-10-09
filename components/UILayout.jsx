@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
       <TokenModal />
       <Navbar></Navbar>
 
-      <Container w={"100%"} pt={20}>
+      <Container w={"100%"} pt={18}>
         {children}
       </Container>
     </Box>

@@ -66,9 +66,7 @@ const Navbar = (/* props */) => {
           w={"100%"}
         >
           <HStack align="left" mr={5}>
-            <Heading as="h2" size="lg" color={"yellow.400"}>
-              FairBids
-            </Heading>
+            <Image maxH={"30px"} src={"/logo.png"} alt={"logo"} />
           </HStack>
 
           <Box align="right">
