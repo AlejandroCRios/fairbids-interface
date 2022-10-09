@@ -21,12 +21,11 @@ export default function Home() {
   /*   const { result } = useAccountSigner(account); */
 
   return (
-    <Box as="main" pb={8} color={"whiteAlpha.800"}>
-      <Container maxW={"xl"} w={"100%"} pt={20}>
-        {items.map((item) => (
-          <Item key={item.name} data={item} />
-        ))}
-      </Container>
-    </Box>
+    <>
+      {" "}
+      {items.map((item) => (
+        <Item key={item.name} data={item} />
+      ))}
+    </>
   );
 }

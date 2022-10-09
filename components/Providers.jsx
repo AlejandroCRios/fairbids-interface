@@ -38,7 +38,7 @@ const wagmiClient = createClient({
   provider,
 });
 
-export default function Main({ children }) {
+export default function Providers({ children }) {
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider

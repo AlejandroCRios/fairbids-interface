@@ -20,8 +20,10 @@ import { useToast } from "@chakra-ui/react";
 import { TokenModal } from "./TokenModal";
 import SelectToken from "./SelectToken.jsx";
 import { useAppInfo } from "../context/appContext";
+import { useRouter } from "next/router";
 
 const Item = ({ data }) => {
+  const router = useRouter();
   const { address, isConnecting, isDisconnected } = useAccount();
   const { formState, onInputChange } = useForm();
   const toast = useToast();
@@ -92,15 +94,16 @@ const Item = ({ data }) => {
               colorScheme="yellow"
               size="md"
               onClick={() => {
-                sendBid();
-                toast({
+                /* sendBid(); */
+                /*     toast({
                   title: "Succesfull Bid.",
                   description: "We've created your Bid.",
                   status: "success",
                   duration: 9000,
                   isClosable: true,
                   position: "bottom-right",
-                });
+                }) */
+                router.push("succesful-bid");
               }}
             >
               Bid

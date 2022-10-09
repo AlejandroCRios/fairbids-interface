@@ -34,7 +34,11 @@ const Layout = ({ children }) => {
       <Navbar></Navbar>
 
       <Container w={"100%"} pt={18}>
-        {children}
+        <Box as="main" pb={8} color={"whiteAlpha.800"}>
+          <Container maxW={"xl"} w={"100%"} pt={20}>
+            {children}
+          </Container>
+        </Box>
       </Container>
     </Box>
   );

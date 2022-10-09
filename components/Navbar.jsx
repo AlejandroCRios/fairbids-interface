@@ -1,10 +1,9 @@
 /* import Logo from "./logo"; */
-import NextLink from "next/link";
+import Link from "next/link";
 import {
   Container,
   Image,
   Box,
-  Link,
   Stack,
   Heading,
   Flex,
@@ -66,7 +65,9 @@ const Navbar = (/* props */) => {
           w={"100%"}
         >
           <HStack align="left" mr={5}>
-            <Image maxH={"30px"} src={"/logo.png"} alt={"logo"} />
+            <Link href="/">
+              <Image maxH={"30px"} src={"/logo.png"} alt={"logo"} />
+            </Link>
           </HStack>
 
           <Box align="right">
