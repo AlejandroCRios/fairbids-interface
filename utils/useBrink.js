@@ -6,14 +6,14 @@ const useBrink = () => {
   const { data: signer } = useSigner();
   const provider = useProvider();
   const { address } = useAccount();
-  console.log(address, provider, signer);
+  /*   console.log(address, provider, signer); */
 
   const initBrink = async () => {
     const account = brink.account(address, { provider, signer });
-    console.log("account", account);
+    /*     console.log("account", account); */
 
     const isDeployed = await account.isDeployed();
-    console.log("isDeployed", isDeployed);
+    /* console.log("isDeployed", isDeployed); */
     if (!isDeployed) {
       const tx = await account.deploy();
       console.log(tx);

@@ -5,7 +5,7 @@ import "@fontsource/open-sans/700.css";
 
 import { Main } from "./main";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <Main>
       <Layout>
@@ -14,5 +14,3 @@ function MyApp({ Component, pageProps }) {
     </Main>
   );
 }
-
-export default MyApp;
