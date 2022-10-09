@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { items } from "../data/items";
 
-const Success = () => {
+export default function Success() {
   const devconTicket = items.find((item) => item.name === "Devcon VI Ticket");
   return (
     <VStack
@@ -40,6 +40,4 @@ const Success = () => {
       </VStack>
     </VStack>
   );
-};
-
-export default Success;
+}
