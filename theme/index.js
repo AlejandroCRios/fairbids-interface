@@ -19,10 +19,22 @@ const colors = {
     800: "#4a2d00",
     900: "#1d0e00",
   },
+  fairPurple: {
+    50: "#ffe7ff",
+    100: "#f3bff3",
+    200: "#e897e7",
+    300: "#de6edc",
+    400: "#912190",
+    500: "#912190",
+    600: "#912190",
+    700: "#681667",
+    800: "#400c3f",
+    900: "#1a0218",
+  },
 };
 const config = {
   initialColorMode: "dark",
-  useSystemColorMode: true,
+  useSystemColorMode: false,
 };
 
 export const theme = extendTheme({

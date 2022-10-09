@@ -16,22 +16,26 @@ import {
 
 const SuccesfulBid = () => {
   return (
-    <VStack rounded={"md"} p={5} spacing={5} bgColor={"#0A071E"} boxShadow="xl">
+    <VStack
+      rounded={"md"}
+      p={5}
+      spacing={10}
+      bgColor={"#0A071E"}
+      boxShadow="xl"
+    >
+      <Image src={data.image} alt={"item image"}></Image>
       <Heading color={"whiteAlpha.800"} fontSize={"lg"}>
-        Congratitulations
+        {data.name} {"    "}
       </Heading>
-      <VStack
-        w={"100%"}
-        justify={"center"}
-        align={"flex-start"}
-        color={"whiteAlpha.700"}
-        spacing={3}
-      ></VStack>
-      <VStack py={10} w={"100%"} align={"flex-start"}>
-        {/*  <Text>How much do you want to bid for this item?</Text> */}
 
-        <Stack justify={"center"} w={"100%"}></Stack>
-      </VStack>
+      <HStack w={"100%"} justify={"center"}>
+        <Text>
+          <Text as={"span"} fontWeight={"bold"}>
+            Minimum price:
+          </Text>{" "}
+          ${data.minPrice}
+        </Text>
+      </HStack>
     </VStack>
   );
 };

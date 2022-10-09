@@ -30,13 +30,13 @@ const SelectToken = ({ addressSpender }) => {
       w={"100%"}
     >
       <HStack align={"flex-start"} justify={"flex-start"} px={2}>
-        {/*   <Image
+        <Image
           src={bidToken?.iconUrl}
           h={"24px"}
           w={"24px"}
           alt="icon"
           mr={"3px"}
-        ></Image> */}
+        ></Image>
         <Text fontSize={{ base: "14px", md: "16px" }}>{bidToken?.symbol}</Text>
         <ChevronDownIcon w={{ base: 5, md: 5 }} h={{ base: 5, md: 5 }} />
       </HStack>

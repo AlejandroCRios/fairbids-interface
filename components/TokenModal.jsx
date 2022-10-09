@@ -76,7 +76,7 @@ export function TokenModal() {
                     <Search2Icon />{" "}
                   </InputLeftElement>
                   <Input
-                    type={"number"}
+                    type={"text"}
                     color={"white"}
                     borderColor={"whiteAlpha.400"}
                     _focus={{ bgColor: "#090616" }}
