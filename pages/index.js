@@ -18,7 +18,7 @@ const items = [
 ];
 export default function Home() {
   const { address, isConnecting, isDisconnected } = useAccount();
-  const { account } = useBrink();
+  /*  const { account } = useBrink(); */
   /*   const { result } = useAccountSigner(account); */
 
   return (
