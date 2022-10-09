@@ -7,7 +7,7 @@ const items = [
     image: "/image_0.png",
     event: "Devcon VI - Oct. 11th – 14th, 2022",
     orderCode: "Z5A3D",
-    details: "1x LatAm Builder Discount",
+    details: "1x LatAm Auction ticket",
     contact: "Devcon - support@devcon.org",
   },
 ];

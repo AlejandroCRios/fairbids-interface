@@ -22,6 +22,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ToggleButton";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
+import { Connect } from "./Connect";
 
 /* const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
@@ -72,7 +73,8 @@ const Navbar = (/* props */) => {
 
           <Box align="right">
             {/*  <ThemeToggleButton /> */}
-            {!isDisconnected && <ConnectButton />}
+            <ConnectButton />
+            {/*       <Connect /> */}
           </Box>
         </HStack>
       </GridItem>

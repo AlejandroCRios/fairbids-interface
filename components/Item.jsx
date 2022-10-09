@@ -43,7 +43,7 @@ const Item = ({ data }) => {
           </VStack>
           <VStack justify={"flex-start"} align={"flex-start"}>
             <Text>{data.event}</Text>
-            <Text>{data.orderCode}</Text>
+            <Text>XXXXXXXX</Text>
             <Text>{data.details}</Text>
             <Text>{data.contact}</Text>
           </VStack>
@@ -61,9 +61,13 @@ const Item = ({ data }) => {
         <Stack justify={"center"} w={"100%"}>
           {" "}
           {isConnecting && <Text>... is connecting</Text>}
-          {address && (
+          {address ? (
             <Button colorScheme="yellow" size="md">
               Bid
+            </Button>
+          ) : (
+            <Button colorScheme="yellow" disabled size="md">
+              connect your wallet
             </Button>
           )}
         </Stack>
