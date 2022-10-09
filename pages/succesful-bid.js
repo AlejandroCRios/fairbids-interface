@@ -13,8 +13,10 @@ import {
   NumberInput,
   InputGroup,
 } from "@chakra-ui/react";
+import { items } from "../data/items";
 
 const SuccesfulBid = () => {
+  const devconTicket = items.find((item) => item.name === "Devcon VI Ticket");
   return (
     <VStack
       rounded={"md"}
@@ -25,7 +27,7 @@ const SuccesfulBid = () => {
     >
       <Image src={data.image} alt={"item image"}></Image>
       <Heading color={"whiteAlpha.800"} fontSize={"lg"}>
-        {data.name} {"    "}
+        {devconTicket.name} {"    "}
       </Heading>
 
       <HStack w={"100%"} justify={"center"}>
@@ -33,7 +35,7 @@ const SuccesfulBid = () => {
           <Text as={"span"} fontWeight={"bold"}>
             Minimum price:
           </Text>{" "}
-          ${data.minPrice}
+          ${devconTicket.minPrice}
         </Text>
       </HStack>
     </VStack>

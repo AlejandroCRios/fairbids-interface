@@ -21,6 +21,9 @@ import { TokenModal } from "./TokenModal";
 import SelectToken from "./SelectToken.jsx";
 import { useAppInfo } from "../context/appContext";
 import { useRouter } from "next/router";
+import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import wagmigotchiABI from "../data/dummyabi.json";
+import { useSignMessage } from "wagmi";
 
 const Item = ({ data }) => {
   const router = useRouter();
@@ -33,6 +36,14 @@ const Item = ({ data }) => {
   const sendBid = () => {
     console.log(address, bid_Amount, bidToken);
   };
+
+  const signObjects = useSignMessage({
+    message:
+      "Hi there! Thank you for doing a fairbid. You are submitting a $650 DAI bid for Devcon Tickets",
+  });
+  console.log(signObjects);
+  const { signMessage, isSuccess } = signObjects;
+
   return (
     <VStack rounded={"md"} p={5} spacing={5} bgColor={"#0A071E"} boxShadow="xl">
       <Image src={data.image} alt={"item image"}></Image>
@@ -94,6 +105,9 @@ const Item = ({ data }) => {
               colorScheme="yellow"
               size="md"
               onClick={() => {
+                signMessage();
+                router.push("/success");
+                /*  if (isSuccess) router.push("/success"); */
                 /* sendBid(); */
                 /*     toast({
                   title: "Succesfull Bid.",
@@ -103,7 +117,6 @@ const Item = ({ data }) => {
                   isClosable: true,
                   position: "bottom-right",
                 }) */
-                router.push("succesful-bid");
               }}
             >
               Bid

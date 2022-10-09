@@ -17,14 +17,7 @@ import { AppProvider } from "../context/appContext";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli, chain.localhost],
-  [
-    publicProvider(),
-    /*  jsonRpcProvider({
-      rpc: (chain) => ({
-        http: `http://127.0.0.1:8545/`,
-      }),
-    }), */
-  ]
+  [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
