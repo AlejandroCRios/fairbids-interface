@@ -8,7 +8,7 @@ export const items = [
     details: "1x LatAm Auction ticket",
     contact: "Devcon - support@devcon.org",
     auctionStart: "Oct 9, 2022 13:42:23",
-    auctionEnds: " Oct 10, 2022 13:42:24",
+    auctionEnds: " Oct 11, 2022 13:42:24",
     minPrice: "600",
   },
 ];

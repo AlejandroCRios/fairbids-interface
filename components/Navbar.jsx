@@ -72,8 +72,8 @@ const Navbar = (/* props */) => {
 
           <Box align="right">
             {/*  <ThemeToggleButton /> */}
-            {/*   <ConnectButton /> */}
-            <Connect />
+            <ConnectButton />
+            {/*   <Connect /> */}
           </Box>
         </HStack>
       </GridItem>

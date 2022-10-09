@@ -45,7 +45,7 @@ const Item = ({ data }) => {
   const { signMessage, isSuccess } = signObjects;
 
   return (
-    <VStack rounded={"md"} p={5} spacing={5} bgColor={"#0A071E"} boxShadow="xl">
+    <VStack rounded={"md"} p={5} spacing={8} bgColor={"#0A071E"} boxShadow="xl">
       <Image src={data.image} alt={"item image"}></Image>
       <Heading color={"whiteAlpha.800"} fontSize={"lg"}>
         {data.name} {"    "}
@@ -64,19 +64,27 @@ const Item = ({ data }) => {
             <Text fontWeight={"bold"} fontSize={"md"}>
               Event
             </Text>
-            <Text fontWeight={"bold"}>Order Code</Text>
+            <Text fontWeight={"bold"}>Auction start</Text>
+            <Text fontWeight={"bold"}>Auction end</Text>
             <Text fontWeight={"bold"}>Details</Text>
             <Text fontWeight={"bold"}>Contact</Text>
           </VStack>
           <VStack justify={"flex-start"} align={"flex-start"}>
             <Text>{data.event}</Text>
-            <Text>XXXXXXXX</Text>
+            <Text>{data.auctionStart}</Text>
+            <Text>{data.auctionEnds}</Text>
             <Text>{data.details}</Text>
             <Text>{data.contact}</Text>
           </VStack>
         </HStack>
       </VStack>
-      <VStack py={10} w={"100%"} align={"flex-start"}>
+      <HStack>
+        <Text>
+          <Text fontWeight={"bold"}>Minimun bid price:</Text>
+        </Text>
+        <Text fontStyle={"oblique"}>${data.minPrice}</Text>
+      </HStack>
+      <VStack w={"100%"} align={"flex-start"}>
         <Text>How much do you want to bid for this item?</Text>
         <HStack w={"100%"}>
           <InputGroup>
@@ -102,7 +110,7 @@ const Item = ({ data }) => {
           {isConnecting && <Text>... is connecting</Text>}
           {address ? (
             <Button
-              colorScheme="yellow"
+              colorScheme="blue"
               size="md"
               onClick={() => {
                 signMessage();
