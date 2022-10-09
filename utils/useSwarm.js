@@ -1,11 +1,12 @@
 import { Bee, BeeDebug } from "@ethersphere/bee-js"
 
-const useBrink = async () => {
+const useSwarm = async () => {
     
     const bee = new Bee('http://localhost:1633')
     const beeDebug = new BeeDebug('http://localhost:1635')
 
-    const postageBatchId = await beeDebug.createPostageBatch("100", 17) // ?????
+    //const postageBatchId = await beeDebug.createPostageBatch("100", 17) // ?????
+    const postageBatchId = "c3f185d71a22f69c4e3be4122c6ec3bfa64901276f69fe96d24bd8e8d254b2e2"
     const result = await bee.uploadData(postageBatchId, "Bee is awesome!")
 
     // prints Swarm hash of the file with which it can be retrieved
@@ -18,4 +19,4 @@ const useBrink = async () => {
     return result
 }
 
-export default useBrink;
+export default useSwarm;
