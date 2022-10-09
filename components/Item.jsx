@@ -106,7 +106,10 @@ const Item = ({ data }) => {
               size="md"
               onClick={() => {
                 signMessage();
-                router.push("/success");
+                setTimeout(function () {
+                  router.push("/success");
+                }, 5000);
+
                 /*  if (isSuccess) router.push("/success"); */
                 /* sendBid(); */
                 /*     toast({
