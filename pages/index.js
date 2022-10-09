@@ -1,7 +1,6 @@
 import { Box, Button, Container, Input, VStack } from "@chakra-ui/react";
 import { useAccount, useContract, useSigner, useProvider } from "wagmi";
 
-import useBrink from "../utils/useBrink";
 import { useForm } from "../helpers/useForm";
 
 import Item from "../components/Item";
