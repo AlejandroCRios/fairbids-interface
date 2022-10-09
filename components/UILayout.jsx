@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Box, Container, HStack, useColorModeValue } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import { TokenModal } from "./TokenModal";
 
 Navbar;
 
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
 
         <title>VMax - interface</title>
       </Head>
-
+      <TokenModal />
       <Navbar></Navbar>
 
       <Container w={"100%"} pt={20}>

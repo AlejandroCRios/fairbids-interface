@@ -67,14 +67,14 @@ const Navbar = (/* props */) => {
         >
           <HStack align="left" mr={5}>
             <Heading as="h2" size="lg" color={"yellow.400"}>
-              v-max
+              FairBids
             </Heading>
           </HStack>
 
           <Box align="right">
             {/*  <ThemeToggleButton /> */}
-            <ConnectButton />
-            {/*       <Connect /> */}
+            {/*   <ConnectButton /> */}
+            <Connect />
           </Box>
         </HStack>
       </GridItem>

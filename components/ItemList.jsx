@@ -13,14 +13,7 @@ const items = [
 ];
 
 const ItemList = () => {
-  return (
-    <>
-      {" "}
-      {items.map((item) => (
-        <Item key={item.name} data={item} />
-      ))}
-    </>
-  );
+  return <> </>;
 };
 
 export default ItemList;

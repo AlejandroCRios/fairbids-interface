@@ -12,16 +12,18 @@ import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 import { theme } from "../theme";
+import { StateProvider } from "../context/stateContext";
+import { AppProvider } from "../context/appContext";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli, chain.localhost],
   [
     publicProvider(),
-    jsonRpcProvider({
+    /*  jsonRpcProvider({
       rpc: (chain) => ({
         http: `http://127.0.0.1:8545/`,
       }),
-    }),
+    }), */
   ]
 );
 
@@ -44,7 +46,11 @@ export const Main = ({ children }) => {
         theme={darkTheme()}
         chains={chains} /* theme={darkTheme} */
       >
-        <ChakraProvider theme={theme}> {children}</ChakraProvider>
+        <ChakraProvider theme={theme}>
+          <StateProvider>
+            <AppProvider>{children}</AppProvider>
+          </StateProvider>{" "}
+        </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   );

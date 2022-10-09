@@ -8,15 +8,29 @@ import {
   Text,
   HStack,
   Stack,
+  useDisclosure,
+  InputRightElement,
+  NumberInput,
+  InputGroup,
 } from "@chakra-ui/react";
 import React from "react";
 import { useAccount, useContract, useSigner, useProvider } from "wagmi";
 import { useForm } from "../helpers/useForm";
+import { useToast } from "@chakra-ui/react";
+import { TokenModal } from "./TokenModal";
+import SelectToken from "./SelectToken.jsx";
+import { useAppInfo } from "../context/appContext";
 
 const Item = ({ data }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const { formState, onInputChange } = useForm();
+  const toast = useToast();
+  const { onOpen } = useDisclosure();
+  const { bid_Amount, bidToken, isBidToken_allowed } = useAppInfo();
 
+  const sendBid = () => {
+    console.log(address, bid_Amount, bidToken);
+  };
   return (
     <VStack rounded={"md"} p={5} spacing={5} bgColor={"#0A071E"} boxShadow="xl">
       <Image src={data.image} alt={"item image"}></Image>
@@ -51,18 +65,44 @@ const Item = ({ data }) => {
       </VStack>
       <VStack py={10} w={"100%"} align={"flex-start"}>
         <Text>How much do you want to bid for this item?</Text>
-        <Input
-          type={"number"}
-          color={"white"}
-          name="bidPrice"
-          onChange={onInputChange}
-          placeholder={"3$"}
-        ></Input>{" "}
+        <HStack w={"100%"}>
+          <InputGroup>
+            <InputRightElement w={"fit-content"}>
+              <SelectToken />
+            </InputRightElement>
+            <Input
+              type={"number"}
+              color={"white"}
+              name="bidPrice"
+              _focus={{ bgColor: "#090616" }}
+              onChange={onInputChange}
+              placeholder={"3$"}
+            />
+          </InputGroup>{" "}
+          {/* <Button colorScheme={"blue"} onClick={onOpen}>
+            Select token
+          </Button> */}
+        </HStack>
+
         <Stack justify={"center"} w={"100%"}>
           {" "}
           {isConnecting && <Text>... is connecting</Text>}
           {address ? (
-            <Button colorScheme="yellow" size="md">
+            <Button
+              colorScheme="yellow"
+              size="md"
+              onClick={() => {
+                sendBid();
+                toast({
+                  title: "Succesfull Bid.",
+                  description: "We've created your Bid.",
+                  status: "success",
+                  duration: 9000,
+                  isClosable: true,
+                  position: "bottom-right",
+                });
+              }}
+            >
               Bid
             </Button>
           ) : (
