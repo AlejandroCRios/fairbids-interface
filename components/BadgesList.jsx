@@ -1,6 +1,6 @@
 import { Wrap } from "@chakra-ui/react";
 import { tokens } from "../data/tokens";
-import TokenBadge from "./tokenBadge";
+import TokenBadge from "./TokenBadge";
 
 const BadgesList = () => {
   return (
